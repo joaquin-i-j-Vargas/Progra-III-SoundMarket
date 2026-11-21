@@ -1,0 +1,40 @@
+import express from "express";
+import environments from "./src/config/environments";
+import { loggerUrl } from "./src/api/middlewares/middlewares.js";
+import { authRoutes, productRoutes, userRoutes, viewRouts } from "./src/api/routes/index.js";
+import { __dirname, join } from "./src/api/utils/index.js";
+import session from "express-session";
+
+
+const app = express();
+const { port, session_key } = environments;
+const PORT = port;
+
+app.set("view engine", "ejs");
+app.set("views", join(__dirname, "src/views"));
+
+app.use(express.static(join(__dirname, "src/public")));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(loggerUrl);
+app.use(session({
+    secret: session_key,
+    resave: false,
+    saveUninitialized: true
+
+}));
+
+
+app.get("/", (req, res) => {
+    res.send("")
+});
+
+app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
+app.use("/dashboard", viewRouts);
+app.use("/", authRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en https://localhost:${PORT}`);
+});
