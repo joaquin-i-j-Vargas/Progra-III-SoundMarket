@@ -50,7 +50,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `products` (`id`, `name`, `image`, `category`, `price`, `active`) VALUES
 (1, 'Guitarra Criolla Clasica', '/Img/Instrumentos/Guitarra criolla.jpg', 'cuerda', '120000.00', 1),
-(2, 'Guitarra Acustica Folk', '', 'cuerda', '185000.00', 1),
+(2, 'Guitarra Acustica Folk', '/img/Instrumentos/Guitarra Acustica Folk.png', 'cuerda', '185000.00', 1),
 (3, 'Guitarra Electrica Stratocaster', '/Img/Instrumentos/Guitarra Electrica Stratocaster.png', 'cuerda', '350000.00', 1),
 (4, 'Guitarra Electrica Les Paul', '/Img/Instrumentos/Guitarra Electrica Les Paul.png', 'cuerda', '420000.00', 1),
 (5, 'Bajo Electrico Precision 4 Cuerdas', '/Img/Instrumentos/Bajo Electrico Precision 4 Cuerdas.png', 'cuerda', '310000.00', 1),

@@ -1,4 +1,5 @@
 import express from "express";
+import { productRoutes, userRoutes, authRoutes } from "./src/api/routes/index.js";
 import environments from "./src/api/config/environments.js";
 import { loggerUrl } from "./src/api/middlewares/middlewares.js";
 import cors from "cors";
@@ -32,9 +33,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
-/* app.use("/api/users", userRoutes);
-app.use("/dashboard", viewRouts);
-app.use("/", authRoutes); */ 
+app.use("/api/users", userRoutes);
+app.use("/", authRoutes); 
 
 
 app.listen(PORT, () => {

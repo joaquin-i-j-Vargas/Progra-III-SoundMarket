@@ -126,11 +126,11 @@ export const modifyProduct = async (req, res) => {
 
         console.log(result);
 
-        if (result.changedRows === 0) {
-            return res.status(404).json({
-                message: "No se actualizo el producto"
-            })
-        }
+    if (result.affectedRows === 0) {
+        return res.status(404).json({
+        message: `No se encontro producto con id ${id}`
+        });
+    }
 
         res.status(200).json({
             message: "Producto actualizado exitosamente"
