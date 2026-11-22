@@ -14,4 +14,4 @@ export default {
     session_key: process.env.SESSION_KEY
 
 
-}
+};

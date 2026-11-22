@@ -1,8 +1,8 @@
 import express from "express";
-import environments from "./src/config/environments.js";
+import environments from "./src/api/config/environments.js";
 import { loggerUrl } from "./src/api/middlewares/middlewares.js";
 import cors from "cors";
-/* import { authRoutes, productRoutes, userRoutes, viewRouts } from "./src/api/routes/index.js"; */
+import { productRoutes } from "./src/api/routes/index.js";
 import { __dirname, join } from "./src/api/utils/index.js";
 import session from "express-session";
 
@@ -31,11 +31,11 @@ app.get("/", (req, res) => {
     res.send("")
 });
 
-/* app.use("/api/products", productRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+/* app.use("/api/users", userRoutes);
 app.use("/dashboard", viewRouts);
-app.use("/", authRoutes); 
-COMENTADO X AHORITAS */
+app.use("/", authRoutes); */ 
+
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en https://localhost:${PORT}`);
