@@ -17,7 +17,7 @@ const selectActiveProducts = () => {
 
 //obtener productos por ID
 const selectProductById = (id) => {
-    const sql = `SELECT * FROM products WHERE products.id = ?`
+    const sql = "SELECT * FROM products WHERE products.id = ?";
     return connection.query(sql, [id]);
 }
 
