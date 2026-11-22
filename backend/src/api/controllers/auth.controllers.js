@@ -1,62 +1,59 @@
-import AuthModel from "../routes/models.auth.routes";
+import { selectUserByEmail } from "../models/user.models.js";
 
-const Authcontroller = {
-    renderLogin: (req, res) => {
-        res.render("login", {
-            title: "Login usuario",
-            about: "Login usuario admin"
-        });
-    },
+// Muestra el formulario de login
+export const showLogin = (req, res) => {
+    res.render("login", {
+        title: "Login usuario",
+        about: "Login usuario admin"
+    });
+}
 
-    login: async (req, res) => {
-        try {
-            const { email, password } = req.body;
+// Procesa el login
+export const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
 
-            if (!email || !password) {
-                return res.render("login", {
-                    title: "Login usuario",
-                    about: "Login usuario admin",
-                    error: "Todos los campos son requeridos"
-                });
-            }
-
-            const user = await AuthModel.findUserByCredentials(email, password);
-
-            if (!user) {
-                return res.render("login", {
-                    title: "Login usuario",
-                    about: "Login usuario admin",
-                    error: "Credenciales incorrectas"
-                });
-            }
-
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                email: user.email
-            };
-
-            return res.redirect("/dashboar/principal");
-        } catch (error) {
-            console.error("Error en el login:", error);
-            return res.status(500).json({
-                message: "Error interno del servidor"
+        if (!email || !password) {
+            return res.status(400).render("login", {
+                title: "Login usuario",
+                about: "Login usuario admin",
+                error: "Todos los campos son requeridos"
             });
         }
-    },
 
-    logout: (req, res) => {
-        req.session.destroy((err) => {
-            if (err) {
-                console.error("Error al destruir la sesión:", err);
-                return res.status(500).json({
-                    message: "Error al cerrar la sesión"
-                });
-            }
+        const [rows] = await selectUserByEmail(email);
+        const user = rows[0];
 
-            return res.redirect("/login");
+        // Mismo mensaje si falla el email o la password
+        if (!user || user.password !== password) {
+            return res.status(401).render("login", {
+                title: "Login usuario",
+                about: "Login usuario admin",
+                error: "Credenciales incorrectas"
+            });
+        }
+
+        // En la sesion guardamos solo lo necesario, nunca la password
+        req.session.user = {
+            id: user.id,
+            name: user.name,
+            email: user.email
+        };
+
+        res.redirect("/dashboard");
+
+    } catch (error) {
+        console.log("Error en login: ", error);
+
+        res.status(500).json({
+            message: "Error interno al iniciar sesion"
         });
     }
-};
+}
 
-export default Authcontroller;
+// Cierra la sesion
+export const logout = (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/login");
+    });
+}

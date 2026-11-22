@@ -3,7 +3,6 @@ import { productRoutes, userRoutes, authRoutes } from "./src/api/routes/index.js
 import environments from "./src/api/config/environments.js";
 import { loggerUrl } from "./src/api/middlewares/middlewares.js";
 import cors from "cors";
-import { productRoutes } from "./src/api/routes/index.js";
 import { __dirname, join } from "./src/api/utils/index.js";
 import session from "express-session";
 
