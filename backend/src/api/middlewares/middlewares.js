@@ -25,10 +25,38 @@ const validateId = (req, res, next) => {
 }
 
 
+// Middleware de ruta para validar los datos de un usuario
+const validateUser = (req, res, next) => {
+    const errores = [];
+    const { name, email, password } = req.body;
+
+    if (typeof name !== "string" || name.trim().length < 2) {
+        errores.push("El nombre debe tener al menos dos caracteres");
+    }
+
+    if (typeof email !== "string" || !email.includes("@")) {
+        errores.push("El email no es valido");
+    }
+
+    if (typeof password !== "string" || password.length < 6) {
+        errores.push("La password debe tener al menos 6 caracteres");
+    }
+
+    if (errores.length > 0) {
+        return res.status(400).json({
+            message: "Datos invalidos",
+            listaErrores: errores
+        });
+    }
+
+    next();
+}
+
+
 
 // Middleware de ruta para validar los campos de un formulario
 const validateProduct = (req, res, next) => {
-    const categoriasValidas = ["food", "drink"];
+    const categoriasValidas = ["cuerda", "percusion"];
     const errores = []; // Array vacio de errores
 
     // Recogemos los datos del body
@@ -44,8 +72,8 @@ const validateProduct = (req, res, next) => {
         errores.push("El nombre debe tener al menos dos caracteres");
     }
 
-    // Verificamos el campo precio
-    if (typeof price !== "number" || price <= 0) {
+    // Convertimos Strings a Num y Verificamos el campo precio
+    if (isNaN(Number(price)) || Number(price) <= 0) {
         errores.push("El precio debe ser un numero mayor a 0");
     }
 
@@ -82,6 +110,7 @@ export {
     loggerUrl,
     validateId,
     validateProduct,
+    validateUser,
     requireLogin
 }
     
