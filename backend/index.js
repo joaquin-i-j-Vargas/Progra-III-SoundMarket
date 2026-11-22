@@ -38,5 +38,5 @@ app.use("/", authRoutes); */
 
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en https://localhost:${PORT}`);
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
