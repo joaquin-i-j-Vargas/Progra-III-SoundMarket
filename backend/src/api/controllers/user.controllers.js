@@ -1,11 +1,13 @@
-import { insertNewUser } from "../models/user.models";
+import { insertNewUser } from "../models/user.models.js";
 
 
 export const createNewUser = async (req, res) => {
 
     try {
 
-        const { name, mail, password } = req.body;
+        const { name, email, password } = req.body;
+
+        const [result] = await insertNewUser(name, email, password);
 
         console.log(result);
 
