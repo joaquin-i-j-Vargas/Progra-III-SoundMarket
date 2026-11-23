@@ -1,4 +1,5 @@
 import { insertNewUser, selectUserByEmail } from "../models/user.models.js";
+import bcrypt from "bcrypt";
 
 export const createNewUser = async (req, res) => {
     try {
@@ -13,7 +14,8 @@ export const createNewUser = async (req, res) => {
             });
         }
 
-        const [result] = await insertNewUser(name, email, password);
+        const hash = await bcrypt.hash(password, 10);
+        const [result] = await insertNewUser(name, email, hash);
 
         res.status(201).json({
             message: "Usuario creado exitosamente",

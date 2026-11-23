@@ -1,4 +1,5 @@
 import { selectUserByEmail } from "../models/user.models.js";
+import bcrypt from "bcrypt";
 
 // Muestra el formulario de login
 export const showLogin = (req, res) => {
@@ -24,8 +25,11 @@ export const login = async (req, res) => {
         const [rows] = await selectUserByEmail(email);
         const user = rows[0];
 
-        // Mismo mensaje si falla el email o la password
-        if (!user || user.password !== password) {
+        const passwordOk = user ? await bcrypt.compare(password, user.password) : false;
+
+
+
+        if (!passwordOk) {
             return res.status(401).render("login", {
                 title: "Login usuario",
                 about: "Login usuario admin",
@@ -33,6 +37,8 @@ export const login = async (req, res) => {
             });
         }
 
+
+        
         // En la sesion guardamos solo lo necesario, nunca la password
         req.session.user = {
             id: user.id,
