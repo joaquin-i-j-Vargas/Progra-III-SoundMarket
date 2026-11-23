@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundMarket | Carrito</title>
+
+    <link rel="icon" type="image/png" href="../Imgns/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="../Css/Index.css">
+
+    <script defer src="../Js/tema.js"></script>
+    <script defer src="../Js/config.js"></script>
+    <script defer src="../Js/api.js"></script>
+    <script defer src="../Js/comun.js"></script>
+    <script defer src="../Js/carrito.js"></script>
+</head>
+
+
+<body>
+    <header class="barra">
+        <a class="marca" href="productos.html">
+            <img class="logo" src="../Imgns/logo.png" alt="Logo de SoundMarket">
+            <span class="nombre-app">Sound<span class="nombre-app-resalte">Market</span></span>
+        </a>
+
+        <nav class="enlaces">
+            <a href="productos.html">Productos</a>
+            <a href="carrito.html">Carrito <span id="contadorCarrito" class="contador">0</span></a>
+            <button id="botonTema" class="boton-tema" type="button" aria-label="Cambiar tema">🌙</button>
+            <a id="enlaceAdmin" class="boton boton-secundario" href="#">Admin</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <h2>Tu carrito</h2>
+        <section id="listaCarrito"></section>
+        <section id="resumen" class="resumen"></section>
+    </main>
+
+    <div id="modalConfirmar" class="modal">
+        <div class="modal-caja">
+            <h3>¿Confirmar la compra?</h3>
+            <p>Se va a generar tu ticket y el carrito se va a vaciar.</p>
+            <div class="modal-botones">
+                <button id="cancelarCompra" class="boton boton-secundario" type="button">Cancelar</button>
+                <button id="aceptarCompra" class="boton boton-principal" type="button">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="pie">
+        <p>SoundMarket · Tu música, nuestra pasión.</p>
+        <p>Alumnos: Vargas Joaquin y Sanchez Axel/Melodi</p>
+    </footer>
+</body>
+</html>
