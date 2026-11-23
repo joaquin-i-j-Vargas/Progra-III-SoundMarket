@@ -1,0 +1,27 @@
+   <footer class="pie">
+        <p>SoundMarket · Panel de administración</p>
+        <p>Alumnos: Vargas Joaquin y Sanchez Axel/Amelia</p>
+    </footer>
+
+    <script>
+        const botonTema = document.getElementById("botonTema");
+
+        function actualizarIcono() {
+            const oscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+            if (botonTema) botonTema.textContent = oscuro ? "☀️" : "🌙";
+        }
+
+        if (botonTema) {
+            botonTema.addEventListener("click", () => {
+                const oscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+                const nuevo = oscuro ? "claro" : "oscuro";
+                document.documentElement.setAttribute("data-tema", nuevo);
+                localStorage.setItem("tema", nuevo);
+                actualizarIcono();
+            });
+        }
+
+        actualizarIcono();
+    </script>
+</body>
+</html>
