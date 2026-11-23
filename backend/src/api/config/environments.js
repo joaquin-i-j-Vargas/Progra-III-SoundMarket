@@ -1,5 +1,10 @@
 import dotenv from "dotenv";
 
+dotenv.config({ override: true });
+
+console.log("Usuario de la base que se esta leyendo:", process.env.DB_USER);
+
+
 dotenv.config();
 
 export default {
