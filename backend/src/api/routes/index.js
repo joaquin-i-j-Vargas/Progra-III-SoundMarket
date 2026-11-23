@@ -1,11 +1,14 @@
-import productRoutes from "./product.routes.js"; // Importamos las rutas de /api/products
+import productRoutes from "./product.routes.js"; 
 import userRoutes from "./user.routes.js";
 import authRoutes from "./auth.routes.js";
 import saleRoutes from "./sale.routes.js";
+import viewRoutes from "./view.routes.js";
+
 
 export {
     productRoutes,
     authRoutes,
     userRoutes,
-    saleRoutes
+    saleRoutes,
+    viewRoutes
 }

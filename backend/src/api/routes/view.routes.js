@@ -5,7 +5,7 @@ import {
     vistaConsultar,
     vistaCrear,
     vistaModificar
-} from "../controllers/view.controllers.js";
+} from "../controllers/view.controllers.js"
 
 const router = Router();
 
