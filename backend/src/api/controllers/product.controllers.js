@@ -78,10 +78,10 @@ export const getProductById = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("Error obteniendo productos: ", error);
+        console.log("Error obteniendo producto: ", error);
 
         res.status(500).json({
-            message: "Error interno al obtener productos"
+            message: "Error interno al obtener producto"
         });
     }
 }
@@ -105,10 +105,10 @@ export const createProduct = async (req, res) => {
 
 
     } catch (error) {
-        console.log("Error obteniendo productos: ", error);
+        console.log("Error creando producto: ", error);
 
         res.status(500).json({
-            message: "Error interno al obtener productos"
+            message: "Error interno al crear producto"
         });
     }
 }
@@ -137,7 +137,7 @@ export const modifyProduct = async (req, res) => {
         });
 
     } catch (error) {
-        console.log("Error obteniendo productos: ", error);
+        console.log("Error modificando producto: ", error);
 
         res.status(500).json({
             message: "Error interno al modificar productos"
@@ -152,18 +152,24 @@ export const removeProduct = async (req, res) => {
 
     try {
 
-        await ProductModels.deleteProduct(req.id);
-    
+        const [result] = await ProductModels.deleteProduct(req.id);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                message: `No se encontro producto con id ${req.id}`
+            });
+        }
+
         res.status(200).json({
             message: `Producto con id ${req.id} eliminado exitosamente`
         });
 
 
     } catch (error) {
-        console.log("Error obteniendo productos: ", error);
+        console.log("Error eliminando producto: ", error);
 
         res.status(500).json({
-            message: "Error interno al obtener productos"
+            message: "Error interno al eliminar producto"
         });
     }
 }
