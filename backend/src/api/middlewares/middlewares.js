@@ -117,11 +117,46 @@ const requireLogin = (req, res, next) => {
 }
 
 
+
+const validateSale = (req, res, next) => {
+    const errores = [];
+    const { userName, items } = req.body;
+
+    if (typeof userName !== "string" || userName.trim().length < 2) {
+        errores.push("El nombre del cliente debe tener al menos dos caracteres");
+    }
+
+    if (!Array.isArray(items) || items.length === 0) {
+        errores.push("La venta debe tener al menos un producto");
+    } else {
+        items.forEach((item, i) => {
+            if (!Number.isInteger(item.id) || item.id <= 0) {
+                errores.push(`Item ${i + 1}: id invalido`);
+            }
+            if (!Number.isInteger(item.quantity) || item.quantity <= 0) {
+                errores.push(`Item ${i + 1}: cantidad invalida`);
+            }
+        });
+    }
+
+    if (errores.length > 0) {
+        return res.status(400).json({
+            message: "Datos invalidos",
+            listaErrores: errores
+        });
+    }
+
+    next();
+}
+
+
+
 export {
     loggerUrl,
     validateId,
     validateProduct,
     validateUser,
+    validateSale,
     requireLogin
 }
     
