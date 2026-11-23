@@ -66,3 +66,4 @@ async function registrarVenta(cliente, items) {
         total: Number(datos.total)
     };
 }
+
