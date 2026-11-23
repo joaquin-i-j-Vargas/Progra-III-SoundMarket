@@ -49,25 +49,25 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 INSERT INTO `products` (`id`, `name`, `image`, `category`, `price`, `active`) VALUES
-(1, 'Guitarra Criolla Clasica', '/Img/Instrumentos/Guitarra criolla.jpg', 'cuerda', '120000.00', 1),
+(1, 'Guitarra Criolla Clasica', '/img/Instrumentos/Guitarra criolla.jpg', 'cuerda', '120000.00', 1),
 (2, 'Guitarra Acustica Folk', '/img/Instrumentos/Guitarra Acustica Folk.png', 'cuerda', '185000.00', 1),
-(3, 'Guitarra Electrica Stratocaster', '/Img/Instrumentos/Guitarra Electrica Stratocaster.png', 'cuerda', '350000.00', 1),
-(4, 'Guitarra Electrica Les Paul', '/Img/Instrumentos/Guitarra Electrica Les Paul.png', 'cuerda', '420000.00', 1),
-(5, 'Bajo Electrico Precision 4 Cuerdas', '/Img/Instrumentos/Bajo Electrico Precision 4 Cuerdas.png', 'cuerda', '310000.00', 1),
-(6, 'Bajo Electrico Jazz Bass 5 Cuerdas', '/Img/Instrumentos/Bajo Electrico Jazz Bass 5 Cuerdas.png', 'cuerda', '390000.00', 1),
-(7, 'Ukelele Soprano Caoba', '/Img/Instrumentos/Ukelele Soprano Caoba.png', 'cuerda', '65000.00', 1),
-(8, 'Ukelele Concierto Electroacustico', '/Img/Instrumentos/Ukelele Concierto Electroacustico.png', 'cuerda', '95000.00', 1),
-(9, 'Violin Acustico 4/4 con Estuche', '/Img/Instrumentos/Violin Acustico 44 con Estuche.png', 'cuerda', '160000.00', 1),
-(10, 'Violonchelo Estudio 4/4', '/Img/Instrumentos/Violonchelo.png', 'cuerda', '540000.00', 1),
-(11, 'Set de Bongo de Madera', '/Img/Instrumentos/bongos.png', 'percusion', '95000.00', 1),
-(12, 'Arpa Celta 22 Cuerdas', '/Img/Instrumentos/Arpa.png', 'cuerda', '680000.00', 1),
-(13, 'Pandereta Media Luna', '/Img/Instrumentos/Pandereta.png', 'percusion', '18000.00', 1),
-(14, 'Bateria Acustica 5 Cuerpo Completa', '/Img/Instrumentos/Bateria1.png', 'percusion', '780000.00', 1),
-(15, 'Bateria Electronica Mesh Pads', '/Img/Instrumentos/bateriaelectruca.png', 'percusion', '650000.00', 1),
-(16, 'Redoblante Metalico 14 Pulgadas', '/Img/Instrumentos/redoble.png', 'percusion', '115000.00', 1),
-(17, 'Platillo Crash 16 Pulgadas', '/Img/Instrumentos/platillo.png', 'percusion', '140000.00', 1),
-(18, 'Platillos Hi-Hat 14 Pulgadas', '/Img/Instrumentos/platillos dobles.png', 'percusion', '175000.00', 1),
-(19, 'Congas Par 10 y 11 Pulgadas', '/Img/Instrumentos/Bongosgrandes.png', 'percusion', '320000.00', 1);
+(3, 'Guitarra Electrica Stratocaster', '/img/Instrumentos/Guitarra Electrica Stratocaster.png', 'cuerda', '350000.00', 1),
+(4, 'Guitarra Electrica Les Paul', '/img/Instrumentos/Guitarra Electrica Les Paul.png', 'cuerda', '420000.00', 1),
+(5, 'Bajo Electrico Precision 4 Cuerdas', '/img/Instrumentos/Bajo Electrico Precision 4 Cuerdas.png', 'cuerda', '310000.00', 1),
+(6, 'Bajo Electrico Jazz Bass 5 Cuerdas', '/img/Instrumentos/Bajo Electrico Jazz Bass 5 Cuerdas.png', 'cuerda', '390000.00', 1),
+(7, 'Ukelele Soprano Caoba', '/img/Instrumentos/Ukelele Soprano Caoba.png', 'cuerda', '65000.00', 1),
+(8, 'Ukelele Concierto Electroacustico', '/img/Instrumentos/Ukelele Concierto Electroacustico.png', 'cuerda', '95000.00', 1),
+(9, 'Violin Acustico 4/4 con Estuche', '/img/Instrumentos/Violin Acustico 44 con Estuche.png', 'cuerda', '160000.00', 1),
+(10, 'Violonchelo Estudio 4/4', '/img/Instrumentos/Violonchelo.png', 'cuerda', '540000.00', 1),
+(11, 'Set de Bongo de Madera', '/img/Instrumentos/bongos.png', 'percusion', '95000.00', 1),
+(12, 'Arpa Celta 22 Cuerdas', '/img/Instrumentos/Arpa.png', 'cuerda', '680000.00', 1),
+(13, 'Pandereta Media Luna', '/img/Instrumentos/Pandereta.png', 'percusion', '18000.00', 1),
+(14, 'Bateria Acustica 5 Cuerpo Completa', '/img/Instrumentos/Bateria1.png', 'percusion', '780000.00', 1),
+(15, 'Bateria Electronica Mesh Pads', '/img/Instrumentos/bateriaelectruca.png', 'percusion', '650000.00', 1),
+(16, 'Redoblante Metalico 14 Pulgadas', '/img/Instrumentos/redoble.png', 'percusion', '115000.00', 1),
+(17, 'Platillo Crash 16 Pulgadas', '/img/Instrumentos/platillo.png', 'percusion', '140000.00', 1),
+(18, 'Platillos Hi-Hat 14 Pulgadas', '/img/Instrumentos/platillos dobles.png', 'percusion', '175000.00', 1),
+(19, 'Congas Par 10 y 11 Pulgadas', '/img/Instrumentos/Bongosgrandes.png', 'percusion', '320000.00', 1);
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 (1, 'Lucas Fernandez', 'lucas.fernandez@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
