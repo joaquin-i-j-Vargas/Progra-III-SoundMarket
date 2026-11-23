@@ -38,7 +38,7 @@ export const login = async (req, res) => {
         }
 
 
-        
+
         // En la sesion guardamos solo lo necesario, nunca la password
         req.session.user = {
             id: user.id,
@@ -46,7 +46,7 @@ export const login = async (req, res) => {
             email: user.email
         };
 
-        res.redirect("/dashboard");
+        res.redirect("/dashboard/principal");
 
     } catch (error) {
         console.log("Error en login: ", error);

@@ -49,7 +49,7 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 INSERT INTO `products` (`id`, `name`, `image`, `category`, `price`, `active`) VALUES
-(1, 'Guitarra Criolla Clasica', '/img/Instrumentos/Guitarra criolla.jpg', 'cuerda', '120000.00', 1),
+(1, 'Guitarra Criolla Clasica', '/img/Instrumentos/Guitarra Acustica Folk.png', 'cuerda', '120000.00', 1),
 (2, 'Guitarra Acustica Folk', '/img/Instrumentos/Guitarra Acustica Folk.png', 'cuerda', '185000.00', 1),
 (3, 'Guitarra Electrica Stratocaster', '/img/Instrumentos/Guitarra Electrica Stratocaster.png', 'cuerda', '350000.00', 1),
 (4, 'Guitarra Electrica Les Paul', '/img/Instrumentos/Guitarra Electrica Les Paul.png', 'cuerda', '420000.00', 1),
@@ -70,11 +70,11 @@ INSERT INTO `products` (`id`, `name`, `image`, `category`, `price`, `active`) VA
 (19, 'Congas Par 10 y 11 Pulgadas', '/img/Instrumentos/Bongosgrandes.png', 'percusion', '320000.00', 1);
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Lucas Fernandez', 'lucas.fernandez@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(2, 'Valentina Gomez', 'valen.gomez@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(3, 'Mateo Rodriguez', 'mateo.rod@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(4, 'Camila Silva', 'camila.silva@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(5, 'Julian Alvarez', 'julian.alv@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+(1, 'Lucas Fernandez', 'lucas.fernandez@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(2, 'Valentina Gomez', 'valen.gomez@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(3, 'Mateo Rodriguez', 'mateo.rod@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(4, 'Camila Silva', 'camila.silva@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(5, 'Julian Alvarez', 'julian.alv@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 INSERT INTO `sales` (`id`, `date`, `total_price`, `user_name`) VALUES
 (1, '2026-11-15 14:30:00', '138000.00', 'Lucas Fernandez'),
