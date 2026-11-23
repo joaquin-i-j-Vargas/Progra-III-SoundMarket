@@ -28,7 +28,7 @@ app.use(session({
 
 
 app.get("/", (req, res) => {
-    res.send("")
+    res.redirect("/login")
 });
 
 app.use("/api/products", productRoutes);
