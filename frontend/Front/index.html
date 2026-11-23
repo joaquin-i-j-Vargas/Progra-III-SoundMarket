@@ -1,0 +1,66 @@
+
+<!--==========================================================
+TP - Progra III "SoundMarket"
+Alumnos: Vargas Joaquin y Sanchez Axel/Melodi
+============================================================-->
+
+<!DOCTYPE html>
+
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundMarket | Bienvenida</title>
+
+    <link rel="icon" type="image/png" href="../Imgns/favicon.png">
+
+    <!-- Fuente sacadas de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+
+    <link rel="stylesheet" href="../Css/Index.css"> 
+
+    <script defer src="../Js/tema.js"></script>
+    <script defer src="../Js/config.js"></script>
+    <script defer src="../Js/comun.js"></script>
+    <script defer src="../Js/bienvenida.js"></script>
+</head>
+
+
+
+<body>
+    <header class="barra">
+        <a class="marca" href="index.html">
+            <img class="logo" src="../Imgns/logo.png" alt="Logo de SoundMarket">
+            <span class="nombre-app">Sound<span class="nombre-app-resalte">Market</span></span>
+        </a>
+
+        <nav class="acciones">
+            <button id="botonTema" class="boton-tema" type="button" aria-label="Cambiar tema">🌙</button>
+            <a id="enlaceAdmin" class="boton boton-secundario" href="#">Admin</a>
+        </nav>
+    </header>
+
+
+    <main class="portada">
+        <section class="portada-contenido">
+            <h1 class="portada-titulo">Bienvenido a <span class="portada-resalte">SoundMarket</span></h1>
+            <p class="portada-texto">Ingresá tu nombre para comenzar tu experiencia de compra.</p>
+
+
+            <form id="formNombre" class="formulario" novalidate>
+                <label class="formulario-etiqueta" for="nombre">Tu nombre</label>
+                <input class="formulario-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre..." maxlength="30">
+                <p id="mensajeError" class="formulario-error"></p>
+                <button class="boton boton-principal" type="submit">Comenzar →</button>
+            </form>
+        </section>
+    </main>
+
+
+    <footer class="pie">
+        <p>SoundMarket · Tu música, nuestra pasión.</p>
+        <p>Alumnos: Vargas Joaquin y Sanchez Axel/Melodi</p>
+    </footer>
+</body>
+</html>
