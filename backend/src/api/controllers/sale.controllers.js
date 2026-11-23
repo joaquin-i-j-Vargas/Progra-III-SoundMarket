@@ -58,3 +58,19 @@ export const createSale = async (req, res) => {
         });
     }
 }
+
+
+// Obtener todas las ventas
+export const getAllSales = async (req, res) => {
+    try {
+        const [rows] = await SaleModels.selectAllSales(); // Ajusta el nombre según tu modelo
+        res.status(200).json({
+            payload: rows
+        });
+    } catch (error) {
+        console.log("Error obteniendo ventas: ", error);
+        res.status(500).json({
+            message: "Error interno al obtener las ventas"
+        });
+    }
+}
