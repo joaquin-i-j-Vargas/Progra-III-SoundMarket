@@ -74,7 +74,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 (2, 'Valentina Gomez', 'valen.gomez@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
 (3, 'Mateo Rodriguez', 'mateo.rod@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
 (4, 'Camila Silva', 'camila.silva@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(5, 'Julian Alvarez', 'julian.alv@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+(5, 'Julian Alvarez', 'julian.alv@mail.com', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(6, 'Admin', 'admin@mail.com', '123456');
 
 INSERT INTO `sales` (`id`, `date`, `total_price`, `user_name`) VALUES
 (1, '2026-11-15 14:30:00', '138000.00', 'Lucas Fernandez'),
