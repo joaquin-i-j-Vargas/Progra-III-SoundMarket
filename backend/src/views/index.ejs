@@ -1,29 +1,73 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/header.ejs") %>
 
-
     <main>
-        <section id="contenedor-productos">
+        <h3><%= about %></h3>
 
-            <% listaProductos.forEach(producto => { %>
+        <a class="boton boton-principal" href="/dashboard/crear">+ Agregar producto</a>
 
-                <div class="card-producto">
-                
-                    <img class="card-img" src=" <%= producto.image %> " alt="<%= producto.name %>">
-                
-                    <h4><%= producto.name %></h4>
-                
-                    <p>Id: <%= producto.id %></p>
-                
-                    <p>$ <%= producto.price %></p>
-                
-                    <p>Estado: <%= producto.active %> </p>
+        <% const secciones = [
+            { titulo: "Cuerdas", lista: productosCuerda },
+            { titulo: "Percusión", lista: productosPercusion }
+        ]; %>
 
-                </div>
+        <% secciones.forEach(seccion => { %>
 
-            <% }) %>
-            
-        </section>
+            <h3 class="titulo-seccion"><%= seccion.titulo %> (<%= seccion.lista.length %>)</h3>
+
+            <section class="grilla-admin">
+
+                <% seccion.lista.forEach(producto => { %>
+
+                    <div class="card-producto <%= producto.active ? "" : "inactivo" %>">
+
+                        <img class="card-img" src="<%= producto.image %>" alt="<%= producto.name %>">
+
+                        <h4><%= producto.name %></h4>
+
+                        <p>Id: <%= producto.id %></p>
+
+                        <p>$ <%= Number(producto.price) %></p>
+
+                        <p>
+                            <span class="estado <%= producto.active ? "estado-activo" : "estado-inactivo" %>">
+                                <%= producto.active ? "Activo" : "Inactivo" %>
+                            </span>
+                        </p>
+
+                        <div class="acciones">
+                            <a class="boton boton-secundario" href="/dashboard/modificar?id=<%= producto.id %>">Editar</a>
+
+                            <button type="button" class="boton-baja"
+                                data-id="<%= producto.id %>"
+                                data-name="<%= producto.name %>"
+                                data-image="<%= producto.image %>"
+                                data-price="<%= producto.price %>"
+                                data-category="<%= producto.category %>"
+                                data-active="<%= producto.active %>">
+                                <%= producto.active ? "Dar de baja" : "Reactivar" %>
+                            </button>
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+            </section>
+
+        <% }) %>
     </main>
+
+    <div id="modalBaja" class="modal">
+        <div class="modal-caja">
+            <p id="textoModal"></p>
+            <div class="acciones">
+                <button id="cancelarBaja" type="button" class="boton-secundario">Cancelar</button>
+                <button id="confirmarBaja" type="button">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
 
 <%- include("partials/footer.ejs") %>

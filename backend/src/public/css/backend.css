@@ -348,3 +348,82 @@ main input[type="submit"] {
         padding: 1.2rem 2rem;
     }
 }
+
+
+
+/* Dashboard: */
+.titulo-seccion {
+    margin-top: 2rem;
+}
+
+.grilla-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.2rem;
+}
+
+.card-producto.inactivo {
+    opacity: 0.6;
+}
+
+.estado {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.estado-activo {
+    border: 1px solid var(--color-exito);
+    color: var(--color-exito);
+}
+
+.estado-inactivo {
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.acciones .boton,
+.acciones button {
+    flex: 1;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Modal de confirmacion */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 10;
+}
+
+.modal.abierto {
+    display: flex;
+}
+
+.modal-caja {
+    width: 100%;
+    max-width: 26rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-superficie);
+}
+
+.modal-caja p {
+    margin-top: 0;
+    font-weight: 600;
+}
