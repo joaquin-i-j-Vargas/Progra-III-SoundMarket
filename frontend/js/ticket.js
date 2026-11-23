@@ -17,7 +17,7 @@ if (!venta) {
             <td>${i.nombre}</td>
             <td>${i.cantidad}</td>
             <td>${formatearPrecio(i.precio * i.cantidad)}</td>
-        </td>
+        </tr>
         `;
     });
 

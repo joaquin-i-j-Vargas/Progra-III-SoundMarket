@@ -1,56 +1,36 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundMarket | Productos</title>
-
-    <link rel="icon" type="image/png" href="../Imgns/favicon.png">
+    <title>SoundMarket | Ticket</title>
+    <link rel="icon" href="../Imgns/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
     <link rel="stylesheet" href="../Css/Index.css">
-
-    <script defer src="../Js/tema.js"></script>
-    <script defer src="../Js/config.js"></script>
-    <script defer src="../Js/api.js"></script>
-    <script defer src="../Js/comun.js"></script>
-    <script defer src="../Js/productos.js"></script>
+    <script src="../Js/tema.js"></script> 
+    <script defer src="../Js/config.js"></script> 
+    <script defer src="../Js/comun.js"></script> 
+    <script defer src="../Js/ticket.js"></script> 
 </head>
-
-
 <body>
     <header class="barra">
-        <a class="marca" href="productos.html">
-            <img class="logo" src="../../Img/logo.png">
+        <a class="marca" href="ticket.html">
+            <img class="logo" src="../Imgns/logo.png" alt="Logo de SoundMarket"> 
             <span class="nombre-app">Sound<span class="nombre-app-resalte">Market</span></span>
         </a>
-
         <nav class="enlaces">
-            <a href="productos.html">Productos</a>
-            <a href="carrito.html">Carrito <span id="contadorCarrito" class="contador">0</span></a>
             <button id="botonTema" class="boton-tema" type="button" aria-label="Cambiar tema">🌙</button>
-            <a id="enlaceAdmin" class="boton boton-secundario" href="#">Admin</a>
+            <a id="enlaceAdmin" class="boton boton-secundario" href="#">Admin</a> 
         </nav>
     </header>
 
-
     <main class="contenido">
-        <section class="banner">
-            <h1>Encontrá tu próximo sonido</h1>
-            <p>Explorá nuestra selección de instrumentos musicales.</p>
-        </section>
-
-
-        <div class="categorias">
-            <button class="pestana activa" type="button" data-categoria="cuerda">Cuerdas</button>
-            <button class="pestana" type="button" data-categoria="percusion">Percusión</button>
+        <section id="ticket" class="ticket"></section>
+        <div class="ticket-acciones">
+            <button id="descargarPdf" class="boton boton-secundario" type="button">Descargar PDF</button>
+            <button id="salir" class="boton boton-principal" type="button">Salir</button>
         </div>
-
-
-        <section id="grilla" class="grilla"></section>
     </main>
-
 
     <footer class="pie">
         <p>SoundMarket · Tu música, nuestra pasión.</p>
