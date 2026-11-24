@@ -2,17 +2,17 @@
 <%- include("partials/header.ejs") %>
 
     <main>
-        <h3>Consultar producto por id</h3>
+        <h3><%= about %></h3>
 
-        <!-- Formulario obtener producto por id -->
         <form id="getProductForm">
             <label for="idProd">Id producto</label>
-            <input type="number" name="id" id="idProd" min="1" required>
+            <input type="number" name="id" id="idProd" min="1" value="<%= idInicial %>" required>
 
             <input type="submit" value="Consultar">
         </form>
 
-        <section id="contenedor-productos"></section>
+        <div id="mensaje"></div>
+
         <section id="contenedor-form"></section>
     </main>
 

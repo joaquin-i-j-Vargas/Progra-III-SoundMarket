@@ -1,8 +1,6 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/header.ejs") %>
 
-
-
     <main>
         <!-- Formulario POST product -->
         <section class="createProduct-container">
@@ -13,12 +11,12 @@
 
                 <label for="categoryProd">Categoria</label>
                 <select name="category" id="categoryProd" required>
-                    <option value="food">Comida</option>
-                    <option value="drink">Bebida</option>
+                    <option value="cuerda">Cuerdas</option>
+                    <option value="percusion">Percusión</option>
                 </select>
 
-                <label for="imageProd">Imagen</label>
-                <input type="text" name="image" id="imageProd" required>
+                <label for="imageProd">Imagen (ruta o URL)</label>
+                <input type="text" name="image" id="imageProd" placeholder="/img/Instrumentos/guitarra.png" required>
 
                 <label for="nameProd">Nombre</label>
                 <input type="text" name="name" id="nameProd" required>
@@ -26,13 +24,13 @@
                 <label for="priceProd">Precio</label>
                 <input type="number" name="price" id="priceProd" min="1" required>
 
-                <input type="submit" value="Crear producto">
+                <input type="submit" value="Agregar producto">
 
             </form>
 
         </section>
 
-        <section id="contenedor-productos"></section>
+        <div id="mensaje"></div>
     </main>
 
     <script src="/js/post.js"></script>
