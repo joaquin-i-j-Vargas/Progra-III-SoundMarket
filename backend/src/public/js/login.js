@@ -5,6 +5,6 @@
 const botonAccesoRapido = document.getElementById("botonAccesoRapido");
 
 botonAccesoRapido.addEventListener("click", () => {
-    document.getElementById("emailUser").value = "joa@gmail.com";
-    document.getElementById("passwordUser").value = "123456";
+    document.getElementById("emailUser").value = "admin@mail.com";
+    document.getElementById("passwordUser").value = "password";
 });
