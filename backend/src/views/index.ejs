@@ -38,14 +38,11 @@
                         <div class="acciones">
                             <a class="boton boton-secundario" href="/dashboard/modificar?id=<%= producto.id %>">Editar</a>
 
+                            <!-- Los data-* guardan lo que necesita el modal -->
                             <button type="button" class="boton-baja"
                                 data-id="<%= producto.id %>"
-                                data-name="<%= producto.name %>"
-                                data-image="<%= producto.image %>"
-                                data-price="<%= producto.price %>"
-                                data-category="<%= producto.category %>"
-                                data-active="<%= producto.active %>">
-                                <%= producto.active ? "Dar de baja" : "Reactivar" %>
+                                data-name="<%= producto.name %>">
+                                Eliminar
                             </button>
                         </div>
 

@@ -1,7 +1,6 @@
 
 
-// Modal de confirmacion para dar de baja (active = 0) o reactivar (active = 1) un producto
-
+// Modal de confirmacion para eliminar un producto (baja fisica)(Me entere tarde que es requisito parcial.)
 const modal = document.getElementById("modalBaja");
 const textoModal = document.getElementById("textoModal");
 const botonCancelar = document.getElementById("cancelarBaja");
@@ -14,22 +13,10 @@ botonesBaja.forEach((boton) => {
     boton.addEventListener("click", () => {
         productoSeleccionado = {
             id: Number(boton.getAttribute("data-id")),
-            name: boton.getAttribute("data-name"),
-            image: boton.getAttribute("data-image"),
-            price: Number(boton.getAttribute("data-price")),
-            category: boton.getAttribute("data-category"),
-            active: Number(boton.getAttribute("data-active"))
+            name: boton.getAttribute("data-name")
         };
 
-        let accion;
-
-        if (productoSeleccionado.active === 1) {
-            accion = "dar de baja";
-        } else {
-            accion = "reactivar";
-        }
-
-        textoModal.textContent = `¿Seguro que querés ${accion} "${productoSeleccionado.name}"?`;
+        textoModal.textContent = `¿Seguro que querés eliminar "${productoSeleccionado.name}"? Esta acción no se puede deshacer.`;
         modal.classList.add("abierto");
     });
 });
@@ -39,30 +26,20 @@ botonCancelar.addEventListener("click", () => {
 });
 
 botonConfirmar.addEventListener("click", async () => {
-    let nuevoEstado;
-
-    if (productoSeleccionado.active === 1) {
-        nuevoEstado = 0;
-    } else {
-        nuevoEstado = 1;
-    }
-
     try {
-        const respuesta = await fetch("/api/products", {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...productoSeleccionado, active: nuevoEstado })
+        const respuesta = await fetch(`/api/products/${productoSeleccionado.id}`, {
+            method: "DELETE"
         });
 
         if (!respuesta.ok) {
-            throw new Error("No se pudo cambiar el estado");
+            throw new Error("No se pudo eliminar el producto");
         }
 
         window.location.href = "/dashboard/principal";
 
     } catch (error) {
         console.error(error);
-        alert("No se pudo cambiar el estado del producto");
+        alert("No se pudo eliminar el producto");
         modal.classList.remove("abierto");
     }
 });
