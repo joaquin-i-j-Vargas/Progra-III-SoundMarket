@@ -186,12 +186,18 @@ body {
 
 
 .boton-tema {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
+    padding: 0;
     border: 1px solid var(--color-borde);
     border-radius: 50%;
     font-size: 1.1rem;
+    line-height: 1;
     background-color: var(--color-fondo);
+    color: var(--color-texto);
     cursor: pointer;
 }
 
