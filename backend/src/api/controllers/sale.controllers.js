@@ -63,7 +63,7 @@ export const createSale = async (req, res) => {
 // Obtener todas las ventas
 export const getAllSales = async (req, res) => {
     try {
-        const [rows] = await SaleModels.selectAllSales(); // Ajusta el nombre según tu modelo
+        const [rows] = await SaleModels.selectAllSales(); 
         res.status(200).json({
             payload: rows
         });
